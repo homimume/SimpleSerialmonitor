@@ -1,0 +1,9 @@
+#rxArea{
+	width:400px; height:300px;
+	margin: 0px 0px 5px 0px;
+	overflow: scroll;
+	border: inset 2px;
+}
+#sendline{
+	width: 280px;
+}

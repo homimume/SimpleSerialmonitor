@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>SimpleSerialmonitor</title>
+  </head>
+  <body>
+    <script src="jquery-2.2.3.min.js" type="text/javascript"></script>
+    <script src="serial.js" type="text/javascript"></script>
+
+    <div id="rxArea"></div>
+
+    <div id="txArea">
+    <input type="text" id="sendline" name="sendline"></input>
+    <input type="button" id="button_send" value="Send"></input>
+    <select id="breaktype">
+      <option value="none">none</option>
+      <option value="crlf">CR+LF</option>
+      <option value="lf">LF</option>
+      <option value="cr">CR</option>
+    </select>
+    </div>
+
+    <div class="options">
+    <br>
+    <select id="ports">
+    </select>
+    <select id="baudrate">
+      <option value="4800">4800bps</option>
+      <option value="9600">9600bps</option>
+      <option value="14400">14400bps</option>
+      <option value="19200">19200bps</option>
+      <option value="38400">38400bps</option>
+      <option value="57600">57600bps</option>
+      <option value="115200">115200bps</option>
+    </select>
+    <input type="button" id="button_connect" value="Connect"></input>
+    </div>
+  </body>
+</html>

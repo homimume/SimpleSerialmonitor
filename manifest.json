@@ -1,0 +1,14 @@
+{
+  "name": "SimpleSerialmonitor",
+  "description": "ちょっと使いに便利な単純なシリアルモニタです",
+  "version": "1.0",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "128": "icon.png" },
+  "permissions": [
+     "serial"
+  ]
+}

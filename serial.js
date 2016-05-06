@@ -27,12 +27,12 @@ $(function(){
           $('#ports').append($('<option>').val(devList[i].path).text(devList[i].path));
         }
         $("#button_connect").prop("disabled", false);  // Connectボタンを有効にする
-        console.log(devList.length + 'devices find.');
+        console.log(devList.length + ' devices find.');
       }else{
         // 追加できるデバイスが無い場合
         $("#button_connect").prop("disabled", true);  // Connectボタンを無効にする
         $('#ports').append($('<option>').val('nodevice').text('nodevice')); // 代わりにnodeviceを入れておく
-        console.log(devList.length + 'No devices find.');
+        console.log('No devices find.');
       }
     });
   };
@@ -114,6 +114,8 @@ $(function(){
   chrome.serial.onReceive.addListener(function(rx){
     var data = String.fromCharCode.apply(null, new Uint8Array(rx.data)).replace(/\r?\n/g,"<br>");
     $('#rxArea').append(data);  // 画面に表示(追加)させる
-    $('#rxArea').scrollTop($('#rxArea').get(0).scrollHeight); // Auto scroll
+    if($('#check_autoscroll').is(':checked')){
+      $('#rxArea').scrollTop($('#rxArea').get(0).scrollHeight); // Auto scroll
+    }
   });
 });
